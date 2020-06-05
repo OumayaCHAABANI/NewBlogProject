@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,16 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Feast</title>
   </head>
+  {% block content %}
   <body>
 
 <!-- Header section Start-->
@@ -28,13 +22,13 @@
     <a href="blog.html">Blog</a>
 </div>
 
-<nav id="navbar">
+<nav id="navbar" class="sticky"> 
    <!-- container Start-->
     <div class="container">
        <!--Row Start-->
        <div class="row">
         <div class="col-lg-4 col-xs-9">
-            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <a href="index.html"><img src="{% static 'images/logoproject.png'%}" alt="logo"></a>
         </div>
          <div class="col-lg-8 col-xs-3">
             <div class="social-icons square">
@@ -134,7 +128,7 @@
        <div class="row">
            <div class="col-lg-6 col-sm-12" data-aos="fade-right" data-aos-delay="300">
               <a href="#" class="d-block">
-                <img class="img-fluid img-thumbnail" src="images/about-bg.jpg" alt="about-bg">
+                <img class="img-fluid img-thumbnail" src="{% static 'images/about-bg.jpg'%}" alt="about-bg">
               </a>
            </div>
            <div class="col-lg-6 col-sm-12">
@@ -194,7 +188,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-left" data-aos-delay="300">
          <div class="imageBox">
             <a href="images/item-1.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-              <img class="img-fluid img-thumbnail" src="images/item-1.jpg" alt="">
+              <img class="img-fluid img-thumbnail" src="{% static 'images/item-1.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Sea Food</h5>
               </div>
@@ -204,7 +198,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-left" data-aos-delay="500">
          <div class="imageBox">
           <a href="images/item-2.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-2.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-2.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Main Dishes</h5>
               </div>
@@ -214,7 +208,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-left" data-aos-delay="700">
          <div class="imageBox">
           <a href="images/item-3.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-3.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-3.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Appetizers</h5>
               </div>
@@ -224,7 +218,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-left" data-aos-delay="900">
          <div class="imageBox">
           <a href="images/item-4.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-4.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-4.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Desserts</h5>
               </div>
@@ -234,7 +228,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-right" data-aos-delay="300">
          <div class="imageBox">
           <a href="images/item-5.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-5.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-5.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Drinks</h5>
               </div>
@@ -244,7 +238,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-right" data-aos-delay="500">
          <div class="imageBox">
           <a href="images/item-6.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-6.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-6.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Steak Food</h5>
               </div>
@@ -254,7 +248,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-right" data-aos-delay="700">
          <div class="imageBox">
           <a href="images/item-7.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-7.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-7.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Sea Food</h5>
               </div>
@@ -264,7 +258,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-right" data-aos-delay="900">
          <div class="imageBox">
           <a href="images/item-8.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-8.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-8.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Drinks</h5>
               </div>
@@ -274,7 +268,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-left" data-aos-delay="300">
          <div class="imageBox">
           <a href="images/item-4.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-4.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-4.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Desserts</h5>
               </div>
@@ -284,7 +278,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-left" data-aos-delay="500">
          <div class="imageBox">
           <a href="images/item-2.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-2.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-2.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Appetizers</h5>
               </div>
@@ -294,7 +288,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-left" data-aos-delay="700">
          <div class="imageBox">
           <a href="images/item-3.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-3.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-3.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Main Dishes</h5>
               </div>
@@ -304,7 +298,7 @@
         <div class="col-lg-3 col-md-4 col-6" data-aos="fade-left" data-aos-delay="900">
          <div class="imageBox">
           <a href="images/item-1.jpg" class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
-            <img class="img-fluid img-thumbnail" src="images/item-1.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="{% static 'images/item-1.jpg'%}" alt="">
               <div class="textBox">
                   <h5>Other Food</h5>
               </div>
@@ -332,7 +326,7 @@
                  <div class="row">
                      <div class="col-lg-5 col-sm-12">
                         <a href="blog_single.html" class="d-block mb-5 h-100">
-                          <img class="img-fluid img-thumbnail" src="images/blog-1.jpg" alt="blog-1">
+                          <img class="img-fluid img-thumbnail" src="{% static 'images/blog-1.jpg'%}" alt="blog-1">
                         </a>
                      </div>
                      <div class="col-lg-7 col-sm-12 inner-content">
@@ -345,7 +339,7 @@
                  <div class="row">
                      <div class="col-lg-5 col-sm-12">
                         <a href="blog_single.html" class="d-block mb-5 h-100">
-                          <img class="img-fluid img-thumbnail" src="images/blog-2.jpg" alt="blog-2">
+                          <img class="img-fluid img-thumbnail" src="{% static 'images/blog-2.jpg'%}" alt="blog-2">
                         </a>
                      </div>
                      <div class="col-lg-7 col-sm-12 inner-content">
@@ -358,7 +352,7 @@
                  <div class="row">
                      <div class="col-lg-5 col-sm-12">
                         <a href="blog_single.html" class="d-block mb-4 h-100">
-                          <img class="img-fluid img-thumbnail" src="images/blog-3.jpg" alt="blog-3">
+                          <img class="img-fluid img-thumbnail" src="{% static 'images/blog-3.jpg'%}" alt="blog-3">
                         </a>
                      </div>
                      <div class="col-lg-7 col-sm-12 inner-content">
@@ -371,7 +365,7 @@
                  <div class="row">
                      <div class="col-lg-5 col-sm-12">
                         <a href="blog_single.html" class="d-block mb-4 h-100">
-                          <img class="img-fluid img-thumbnail" src="images/blog-4.jpg" alt="blog-4">
+                          <img class="img-fluid img-thumbnail" src="{% static 'images/blog-4.jpg'%}" alt="blog-4">
                         </a>
                      </div>
                      <div class="col-lg-7 col-sm-12 inner-content">
@@ -421,7 +415,7 @@
 
         <!-- Grid column -->
         <div class="col-md-12">
-            <a href="index.html"><img src="images/footer-logo.png" alt="footer-logo"></a>
+            <a href="index.html"><img src="{% static 'images/footer-logo.png'%}" alt="footer-logo"></a>
         </div>
         <!-- Grid column -->
 
@@ -482,7 +476,7 @@
         </div>
         <!-- Grid column -->
         <div class="col-sm-12 copy-right">
-            <p>© 2017, All Rights Reserved. <a href="https://www.template.net/editable/websites/html5">Feast Theme</a> , Designed by <a href="https://www.template.net/editable/websites/html5">Template.net</a></p>
+            <p>© 2020, Tous les droits sont réservés. <a href="https://www.template.net/editable/websites/html5">Feast Theme</a> , Designed by <a href="https://www.template.net/editable/websites/html5">Template.net</a></p>
         </div>
       </div>
       <!-- Grid row-->
@@ -508,4 +502,5 @@
             });
     </script>
   </body>
+  {% endblock %}
 </html>
