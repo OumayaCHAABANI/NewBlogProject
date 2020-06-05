@@ -28,8 +28,9 @@ body {
     background-color: black;
   }
   .user{
-    border-radius: 35%;
-    margin-left: 25%;
+    border-radius: 70%;
+    width: 100%;
+    
   }
   .recettes{
     margin-top: 4%;
