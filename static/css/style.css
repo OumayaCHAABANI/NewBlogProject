@@ -1,0 +1,54 @@
+.body{
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    background-image: url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.liste{
+  background-color: black;
+}
+.connexion{
+    background-color: rgba(73, 160, 3, 0.87) !important;
+    border-color:rgba(73, 160, 3, 0.87) !important ;
+
+}
+.text-center a{
+    color:rgba(73, 160, 3, 0.87) !important ;
+}
+body {
+    padding-top: 56px;
+  }
+  .navbar{
+    background-color: black;
+  }
+  .user{
+    border-radius: 35%;
+    margin-left: 25%;
+  }
+  .recettes{
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .recettes img{
+    width: 100%;
+  }
+  .center{
+    text-align: center;
+    color: white;
+  }
+  .background-border{
+    background-color: black;
+    border-color: black;
+  }
+  .list-group-item.active {
+    background-color: green;
+    border-color: green;
+  }
