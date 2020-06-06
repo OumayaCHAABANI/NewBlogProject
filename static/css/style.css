@@ -53,3 +53,40 @@ body {
     background-color: green;
     border-color: green;
   }
+.about{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 690px;
+}
+.about .image{
+  display: flex;
+  float: left;
+  flex-direction: column;
+ width: 500px;
+ height: 1200px;
+margin-right: 100px;
+}
+.about .content{
+  display: flex;
+  flex-direction: column;
+}
+.items{
+  display: flex;
+  flex-direction: row;
+  Justify-content: space-around;
+}
+.items .imageBox{
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 350px;
+  margin-left: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+}
+.items .textBox{
+  width: 350px;
+  height: 310px;
+}

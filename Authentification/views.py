@@ -46,3 +46,6 @@ def inscription(request):
     else:
         return render(request,'inscription.html')
         messages.info(request,'Veuillez remplir les champs vides') 
+def deconnexion(request):
+    auth.logout(request)
+    return redirect('/')        
