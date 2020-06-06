@@ -33,7 +33,7 @@
              <!--Row Start-->
              <div class="row">
               <div class="col-lg-4 col-xs-9">
-                  <a href="index.html"><img src="../static/images/logo.png" alt="logo"></a>
+                  <a href="index.html"><img src="../static/images/logoProject1.png" alt="logo"></a>
               </div>
                <div class="col-lg-8 col-xs-3">
                   <div class="social-icons square">
@@ -67,106 +67,151 @@
                 </div>
               </div>
             </div>
-            
-  <section class="recettes col-lg-8 card-group">
-            <div class="col-lg-4 col-md-6 col-sm-12">       
-              <div class="col-sm-12 col-lg-12 box">
-                <div class="card" >
-                  <img src="../static/images/item-3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Recette 1</p>
-                                    </div>
-                </div>
-                
-              </div>
+            <div class="col-lg-8">
+              <div class="Ajout_recette panel panel-default">
+                  <button type="button" class="btn btn-outline-success " onclick="ajouter()">Ajout</button>
+                  <h5>Ajouter une recette</h5>
+
+                  <form>
+                    <div class="form-row ">
+                      <div class="form-group col-md-6">
+                        <label >Nom de la recette</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nom de la recette">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label >Ingredients</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Ingredients">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAddress">Preparation</label>
+                      <input type="text" class="form-control"  placeholder="Preparation">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAddress2">Image</label>
+                      <input type="text" class="form-control"  placeholder="Image">
+                    </div>
+                    <div class="form-row">
+                      
+                      <div class="form-group col-md-4">
+                        <label for="inputState">Type</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>sucrés</option>
+                          <option>Salés</option>
+                          <option>Boissons</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputZip">Image</label>
+                        <input type="file" >
+                      </div>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                    <button type="reset" class="btn btn-primary" onclick="annuler()">Annuler</button>
+                  </form>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">       
-              <div class="col-sm-12 col-lg-12 box">
-                <div class="card" >
-                  <img src="../static/images/item-2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Recette 1</p>
-                  </div>
-                </div>
+              <section class="recettes  card-group">
                 
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">       
-              <div class="col-sm-12 col-lg-12 box">
-                <div class="card" >
-                  <img src="../static/images/item-1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Recette 2</p>                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">       
-              <div class="col-sm-12 col-lg-12 box">
-                <div class="card" >
-                  <img src="../static/images/item-3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Recette 1</p>
-                                    </div>
-                </div>
-                
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">       
-              <div class="col-sm-12 col-lg-12 box">
-                <div class="card" >
-                  <img src="../static/images/item-2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Recette 1</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">       
-              <div class="col-sm-12 col-lg-12 box">
-                <div class="card" >
-                  <img src="../static/images/item-1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Recette 2</p>                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">       
-              <div class="col-sm-12 col-lg-12 box">
-                <div class="card" >
-                  <img src="../static/images/item-3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Recette 1</p>
-                                    </div>
-                </div>
-                
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">       
-              <div class="col-sm-12 col-lg-12 box">
-                <div class="card" >
-                  <img src="../static/images/item-2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Recette 1</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">       
-              <div class="col-sm-12 col-lg-12 box">
-                <div class="card" >
-                  <img src="../static/images/item-1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Recette 2</p>                  </div>
-                </div>
-                
-              </div>
-            </div>
-            
-  </section>
+                        <div class="col-lg-4 col-md-6 col-sm-12">       
+                          <div class="col-sm-12 col-lg-12 box">
+                            <div class="card" >
+                              <img src="../static/images/item-3.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Recette 1</p>
+                                                </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">       
+                          <div class="col-sm-12 col-lg-12 box">
+                            <div class="card" >
+                              <img src="../static/images/item-2.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Recette 1</p>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">       
+                          <div class="col-sm-12 col-lg-12 box">
+                            <div class="card" >
+                              <img src="../static/images/item-1.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Recette 2</p>                  </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">       
+                          <div class="col-sm-12 col-lg-12 box">
+                            <div class="card" >
+                              <img src="../static/images/item-3.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Recette 1</p>
+                                                </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">       
+                          <div class="col-sm-12 col-lg-12 box">
+                            <div class="card" >
+                              <img src="../static/images/item-2.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Recette 1</p>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">       
+                          <div class="col-sm-12 col-lg-12 box">
+                            <div class="card" >
+                              <img src="../static/images/item-1.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Recette 2</p>                  </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">       
+                          <div class="col-sm-12 col-lg-12 box">
+                            <div class="card" >
+                              <img src="../static/images/item-3.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Recette 1</p>
+                                                </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">       
+                          <div class="col-sm-12 col-lg-12 box">
+                            <div class="card" >
+                              <img src="../static/images/item-2.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Recette 1</p>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">       
+                          <div class="col-sm-12 col-lg-12 box">
+                            <div class="card" >
+                              <img src="../static/images/item-1.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Recette 2</p>                  </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        
+              </section>
+</div>
 </div>
       </div>
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -182,6 +227,16 @@
                 event.preventDefault();
                 $(this).ekkoLightbox();
             });
+    function annuler(){
+      let form = document.querySelector('form');
+      form.style.display="none";
+      console.log("annuler");  
+      }
+      function ajouter(){
+      let form = document.querySelector('form');
+      form.style.display="block";
+      console.log("annuler");  
+      }
     </script>
   </body>
   </html>

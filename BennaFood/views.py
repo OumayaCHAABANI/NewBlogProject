@@ -9,3 +9,7 @@ def about(request):
 
 def recipes(request):
     return render(request,'recipes.html') 
+
+def profil(request):
+    return render(request,'profil.html') 
+
