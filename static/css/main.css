@@ -69,7 +69,7 @@ textarea {resize: none;}
 ====================*/
 header {
     height: 63px;
-    padding: 54px 0 0 0;
+    padding: 0px 0 0 0;
     background: rgba(0, 0, 0, 0);
     position: relative;
     z-index: 100;
@@ -464,55 +464,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
 }
 .Subscribe {width: 100%;height: auto;color: #fff; padding: 60px; background: #49a003;}
 
-.Subscribe form {
-    float: right;
-}
 .Subscribe .heading h3 {
-    font-size: 50px;
-    font-weight: 300;
+    font-size: 60px;
+    font-weight: 350;
+    position: center;
     letter-spacing: -3px;
     padding-bottom: 0px;
+    padding-left: 150px;
+   
 }
 .Subscribe .heading h6 {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 300;
     letter-spacing: 2px;
+    padding-left: 450px;
 }
 .Subscribe .Subscribe {
     padding: 55px 0;
-}
-.Subscribe .form-control {
-    margin-bottom: 19px;
-    font-size: 14px;
-    border-radius: 0;
-    font-style: italic;
-    padding: 10px 10px;
-}
-.Subscribe .input-group {padding: 7px 0;}
-.Subscribe .btn-info {
-    width: 210px;
-    height: 72px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #fff;
-    background: #000;
-    font-size: 22px;
-    border-radius: 0;
-    font-weight: 400;
-    border: 2px solid transparent;
-}
-.Subscribe .btn-info:hover {
-    color: #fff;
-    background-color: transparent;
-    border-color: rgba(255, 255, 255, 0.35);
-}
-.Subscribe input {
-    font-size: 12px;
-    width: 322px;
-    height: 72px;
-    padding: 0 18px;
-    border: none;
 }
 /*==================== 
     Footer Section
@@ -1095,11 +1063,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     .blog .heading {padding-bottom: 50px;}
     .blog .inner-content {padding-right: 0;}
     .blog h6 {font-size: 14px;}
-    .Subscribe .heading h3 {font-size: 34px;letter-spacing: -1px;}
-    .Subscribe .heading h6 {font-size: 20px;letter-spacing: 1px;}
-    .Subscribe .btn-info {width: 143px;height: 60px;font-size: 16px;}
-    .Subscribe input {font-size: 12px;width: 320px;height: 60px;padding: 0 13px;}
-    .Subscribe {padding: 35px 0;}
+    .Subscribe .heading h3 {font-size: 34px;letter-spacing: -1px;text-align: center;}
+    .Subscribe .heading h6 {font-size: 20px;letter-spacing: 1px;text-align: center;}
+    .Subscribe {padding: 35px 0;text-align: center;}
     footer address p {font-size: 14px;letter-spacing: 0.5px;}
     footer img {width: 20%;padding-bottom: 15px;}
     footer {padding-top: 50px;padding-bottom: 0;}
@@ -1182,10 +1148,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     .items .heading {padding-bottom: 40px;}
     .items .heading h3 {line-height: 20px; font-size: 12px;padding: 0 120px;}
     .items .heading h2 {font-size: 28px;}
-    .Subscribe .heading h3 {font-size: 28px;}
-    .Subscribe .heading h6 {font-size: 18px;}
-    .Subscribe .btn-info {width: 123px;height: 50px;font-size: 14px;}
-    .Subscribe input {font-size: 12px;width: 225px;height: 50px;padding: 0 12px;}
+    .Subscribe .heading h3 {font-size: 28px;text-align: center;}
+    .Subscribe .heading h6 {font-size: 18px;text-align: center;}
     footer {padding-top: 20px;}
     footer .mb-5 {margin-bottom: 1rem!important;}
     .blog .heading h2 {font-size: 36px;line-height: 26px;letter-spacing: -1px;}
@@ -1261,11 +1225,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     .items .heading h3 {padding: 0;}
     .blog .heading h3 {font-size: 19px;}
     .blog .heading h2 {font-size: 34px;}
-    .Subscribe form {float: none;}
     .Subscribe .heading {text-align: center;}
-    .Subscribe input {width: 100%;text-align: center;border: none;}
-    footer .mr-4 {margin-right: 0.7rem!important;}
-    .Subscribe .btn-info {width: 100%;}
     .testimonial .fa-angle-double-down, .testimonial .fa-angle-double-up {display: none;}
     #about-us .image {height: 200px;}
     #about-us p {font-size: 12px;}
@@ -1288,15 +1248,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog-single .comment-box form .btn-primary {padding: 10px 30px;font-size: 12px;letter-spacing: 0.5px;}
     .mbm_social i {font-size: 12px;}
     #blog-single .post strong {font-size: 18px;}
-    .Subscribe .heading h3 {font-size: 24px;}
-    .Subscribe .heading h6 {font-size: 16px;}
-    .Subscribe .heading {padding-bottom: 8px;}
+    .Subscribe .heading h3 {font-size: 24px;text-align: center;}
+    .Subscribe .heading h6 {font-size: 16px;text-align: center;}
+    .Subscribe .heading {padding-bottom: 8px;text-align: center;}
     .Subscribe input {height: 40px;}
     footer .copy-right p {font-size: 12px;letter-spacing: 0.5px;}
 }
 @media (max-width: 375px) {
     .textBox {height: 87%;}
-    .Subscribe .heading h3 {font-size: 24px;}
+    .Subscribe .heading h3 {font-size: 24px;text-align: center;}
     .blog .heading h3 {font-size: 16px;}
     .blog .heading h2 {font-size: 26px;letter-spacing: 0;}
     .items .heading h2 {font-size: 24px;}
@@ -1306,7 +1266,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog .heading h2 {font-size: 26px;letter-spacing: 0;}
     .mbm_social a {width: 94px;}
     .social-buttons h3 {font-size: 12px;font-weight: 400;padding-top: 20px;}
-    .Subscribe .btn-info {font-size: 12px;}
+  
 }
 @media (max-width: 320px) {
     header .social-icons {padding: 9px 10px;}
