@@ -13,3 +13,10 @@ def recipes(request):
 def profil(request):
     return render(request,'profil.html') 
 
+def ajouter(request):
+     if request.method=='POST':
+        titre=request.POST['test']
+        return  titre
+        
+        
+               
