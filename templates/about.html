@@ -16,7 +16,7 @@
 <header class="top">
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="index">Accueil</a>
+    <a href="/">Accueil</a>
     <a class="active" href="about">À propos</a>
     <a href="recipes">Recipes</a>
     {% if user.is_authenticated %}
@@ -28,13 +28,13 @@
       {% endif %}
 </div>
 
-<nav id="navbar">
+<nav id="navbar" class="sticky">
    <!-- container Start-->
     <div class="container">
        <!--Row Start-->
        <div class="row">
         <div class="col-lg-4 col-xs-9">
-            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <a href="index.html"><img src="{% static 'images/logoproject.png'%}" alt="logo"></a>
         </div>
          <div class="col-lg-8 col-xs-3">
             <div class="social-icons square">
@@ -52,27 +52,37 @@
 </header>
 <!-- Header section Ended-->
 
-<section class="banner-home"></section>
+<section class="banner-home">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 data-aos="fade-left" data-aos-delay="300">Bienvenue sur BennaFood</h1><br>
+        <h2 data-aos="fade-left" data-aos-delay="500">Le Blog culinaire pour <br>les gourmands.</h2>
+        <h4 data-aos="fade-left" data-aos-delay="700">C'est l'un des meilleurs Blogs clinaires en Tunisie,ainsi que
+          dans le monde arabe.</h4>
+        <a class="btn btn-success" href="recipes" role="button" data-aos="fade-up" data-aos-delay="1000">check
+          our food</a>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- Banner section End-->
 
 <!-- About Section Start -->
 <div id="about-us">
     <div class="container">
-       <h3>About us</h3>
+       <h3>À propos de nous </h3>
         <div class="row" style="margin-right: 0; margin-left: 0;">
-            <div data-aos="fade-up" data-aos-duration="800">
-             <img src="images/about-bg.jpg" alt="about-bg" class="thumbnail image">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing and typesetting industry. Lorem Ipsum has been thdummy text of the e industry's...e industry' Lorem Ipsum is simply du <br><br>
-            
-              Text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing and typesetting industry. Lorem Ipsum has been thdummy text of the e industry's...e industry's...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing and typesetting industry. Lorem Ipsum has been thdummy text of the e industry's...e industry's... <br><br>
-              
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing and typesetting industry. Lorem Ipsum has been thdummy text of the e industry's...e industry'. <br><br>
-              
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing and typesetting industry. Lorem Ipsum has been thdummy text of the e industry's...e industry's...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing typesetting typesetting typesetting typesetting typesetting industry. Lorem Ipsum has been thdummy text of the e industry's...e industry's... <br><br>
-              
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing and typesetting industry. Lorem Ipsum has been thdummy text of the e typesetting ...e industry's...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing and typesetting industry. Lorem Ipsum has been thdummy text of the e industry's...e industry' Lorem Ipsum is simply du <br><br>
-              
-              mmy text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing and typesetting industry. Lorem Ipsum has been thdummy text of the e industry's...e industry's...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem industry. Lorem Ipsum has been dummy text of the printing typesetting typesetting typesetting typesetting typesetting industry. Lorem Ipsum has been thdummy text of the e industry's...e industry's...
+            <div data-aos="fade-up" data-aos-duration="800" class="about-us">
+             <img src="{% static 'images/about-bg.jpg'%}" alt="about-bg" class="thumbnail imageAbout">
+              <p class="contentAbout">BennaFood est l'un des meilleurs Blogs clinaires en Tunisie,ainsi que dans le monde arabe.</br>
+                Il offre à ses utilisateurs une infinité de recettes dans plusieurs thèmes : sucrées,salées,Boissons
+              chaudes et froides...</br>
+                Grâce à sa diversité, BennaFood a plus que 1000 clients satisfaits du monde entier,qui nous recommandent 
+                 pour notre flexibilité et notre portabilité.</br>
+                 Notre blog est fait pour satisfaire vos besoins 24H/7J.</br>
+                En plus des recettes trouvées,BennaFood permet son utilisateur à donner son feedback sur chaque recette,ainsi
+                qu'à ajouter des recettes sur son propre blog,et ceci est fait suite à sa création du compte et à sa connexion.
                </p>
             </div>
          </div>

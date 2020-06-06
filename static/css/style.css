@@ -90,3 +90,22 @@ margin-right: 100px;
   width: 350px;
   height: 310px;
 }
+.about-us{
+  display: flex;
+  flex-direction: row;
+  Justify-content: space-around;
+}
+.about-us .imageAbout{
+  display: flex;
+  float: left;
+  flex-direction: column;
+ width: 500px;
+ height: 600px;
+margin-right: 100px;
+}
+.about-us .contentAbout{
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
