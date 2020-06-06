@@ -15,10 +15,11 @@
   <header class="top">
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="about.html">À propos</a>
-      <a href="recipes.html">Recettes</a>
-      <a href="profil.html">Profil</a>
+      <a classe="active" href="index">Accueil</a>
+      <a href="about">À propos</a>
+      <a href="recipes">Recettes</a>
       {% if user.is_authenticated %}
+      <a href="profil.html">Mon Blog</a>
       <a href="authentification/deconnexion">Déconnexion</a>
       {% else %}
       <a href="authentification/inscription">Inscription</a>
@@ -53,7 +54,7 @@
           <h2 data-aos="fade-left" data-aos-delay="500">Le Blog culinaire pour <br>les gourmands.</h2>
           <h4 data-aos="fade-left" data-aos-delay="700">C'est l'un des meilleurs Blogs clinaires en Tunisie,ainsi que
             dans le monde arabe.</h4>
-          <a class="btn btn-success" href="recipes.html" role="button" data-aos="fade-up" data-aos-delay="1000">check
+          <a class="btn btn-success" href="recipes" role="button" data-aos="fade-up" data-aos-delay="1000">check
             our food</a>
         </div>
       </div>
