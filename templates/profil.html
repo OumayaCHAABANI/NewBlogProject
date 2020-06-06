@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <link rel="stylesheet" href="../static/css/animate.css">
     <link rel="stylesheet" href="../static/css/main.css">
-    <link rel="stylesheet" href="../static//css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>Feast</title>
   </head>
   <body>
@@ -69,10 +69,13 @@
             </div>
             <div class="col-lg-8">
               <div class="Ajout_recette panel panel-default">
-                  <button type="button" class="btn btn-outline-success " onclick="ajouter()">Ajout</button>
-                  <h5>Ajouter une recette</h5>
+                  <button type="button" class="active btn btn-outline-success " onclick="ajouter()"><i class="fa fa-plus"></i></button>
+                  
+                  
+                  <h5 style="display: none;">Ajouter une recette</h5>
+                  
 
-                  <form>
+                  <form style="display: none;">
                     <div class="form-row ">
                       <div class="form-group col-md-6">
                         <label >Nom de la recette</label>
@@ -107,8 +110,8 @@
                       </div>
                     </div>
                    
-                    <button type="submit" class="btn btn-primary">Ajouter</button>
-                    <button type="reset" class="btn btn-primary" onclick="annuler()">Annuler</button>
+                    <button type="submit" class="btn btn-outline-success">Ajouter</button>
+                    <button type="reset" class="btn btn-outline-success" onclick="annuler()">Annuler</button>
                   </form>
             </div>
               <section class="recettes  card-group">
@@ -230,11 +233,19 @@
     function annuler(){
       let form = document.querySelector('form');
       form.style.display="none";
+      let titre = document.querySelector('h5');
+      
+      titre.style.display="none";
+      document.querySelector('.active').disabled=false;
       console.log("annuler");  
       }
       function ajouter(){
       let form = document.querySelector('form');
+      let titre = document.querySelector('h5');
       form.style.display="block";
+      titre.style.display="block";
+      document.querySelector('.active').disabled=true;
+      
       console.log("annuler");  
       }
     </script>
