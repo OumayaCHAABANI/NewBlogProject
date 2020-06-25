@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="">
+   <meta name="author" content="">
+</head>
+{% block content %}
+
+<body class="body">
+   <section>
+      <!-- Page Content -->
+      <div class="container">
+         <div class="col-md-5">
+            <div class="myform form ">
+               <div class="logo mb-3">
+                  <div class="col-md-12 text-center">
+                     <img src="{% static 'images/logo.ico'%}" alt="">
+                     <h1>Connexion</h1>
+                  </div>
+               </div>
+               <form action="connexion" method="POST" name="connexion">
+                  {% csrf_token %}
+                  <div class="form-group">
+                     <label for="exampleInputText"> Nom d'utilisateur </label>
+                     <input type="text" name="username" class="form-control" id="username"
+                        aria-describedby="nomutilisateur" placeholder="Nom d'utilisateur" value ="">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword">Mot de passe</label>
+                     <input type="password" name="password" id="password" class="form-control"
+                        aria-describedby="emailHelp" placeholder="Mot de passe"  value ="">
+                  </div>
+
+                  <div class=" text-center ">
+                     <button type="submit" class=" btn btn-block connexion btn-primary ">Connexion</button>
+                  </div>
+
+
+                  <div class="form-group">
+                     <p class="text-center">Vous n'avez pas de compte ?<a href="{% url 'inscription' %}"
+                           id="signup"> Inscrivez-vous ici.</a></p>
+                  </div>
+               </form>
+
+            </div>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-danger" role="alert" > {{message}}  </div>
+            {% endfor %}
+            {% endif %}
+         </div>
+      </div>
+
+      <!-- /.container -->
+     
+   </section>
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+</body>
+{% endblock %}
+
+</html>

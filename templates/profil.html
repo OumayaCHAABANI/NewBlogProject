@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+</head>
+{% block content %}
+<body>
+
+  <header class="top">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/">Acceuil</a>
+      <a href="about">À propos</a>
+      <a class="active" href="profil">Mon Blog</a>
+      {% if user.is_authenticated %}
+      <a href="authentification/deconnexion">Déconnexion</a>
+      {% endif %}
+    </div>
+
+    <nav id="navbar" class="sticky">
+      <!-- container Start-->
+      <div class="container">
+        <!--Row Start-->
+        <div class="row">
+          <div class="col-lg-4 col-xs-9">
+            <a href="index.html"><img src="{% static 'images/logoproject.png'%}" alt="logo"></a>
+          </div>
+          <div class="col-lg-8 col-xs-3">
+            <div class="social-icons square">
+              <!-- Page Content -->
+              <div id="page-content-wrapper">
+                <span class="slide-menu" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Row Ended-->
+      </div>
+      <!-- container Ended-->
+    </nav>
+  </header>
+
+
+  <!-- Page Content -->
+  <div>
+
+    <div class="row">
+      <!-- Sidebar Widgets Column -->
+      <div class="col-lg-2 liste col-sm-12 ">
+        <div class="">
+          <div>
+            <img class="user" src="../static/images/user.jpg">
+          </div>
+          <div>
+            <h1 class="center">{{user.username}}</h1>
+            <p class="center">Données  </p>
+            
+           
+            <button  type="button" class="btn btn-success ModifProfil">Modifier</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-10">
+        <div class="Ajout_recette panel panel-default">
+         
+
+          <h5 ></h5>
+
+
+          <form id="ajoutRecette" style="display: none;" method="POST" action="ajoutRecette">
+            {% csrf_token %}
+            <div class="form-row ">
+
+              <div class="form-group col-md-6">
+                <label>Nom de la recette</label>
+                <input type="text" name="nom" class="form-control" id="inputEmail4" placeholder="Nom de la recette">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Ingredients</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="Ingredients">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Preparation</label>
+              <input type="text" class="form-control" placeholder="Preparation">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Image</label>
+              <input type="text" class="form-control" placeholder="Image">
+            </div>
+            <div class="form-row">
+
+              <div class="form-group col-md-4">
+                <label for="inputState">Type</label>
+                <select id="inputState" class="form-control">
+                  <option selected>sucrés</option>
+                  <option>Salés</option>
+                  <option>Boissons</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Image</label>
+                <input type="file">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-outline-success FormAjoutRecette">Ajouter</button>
+            <button type="reset" class="btn btn-outline-success" onclick="annuler()">Annuler</button>
+          </form>
+          {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-danger" role="alert" > {{message}}  </div>
+          {% endfor %}
+          {% endif %}
+          <form id="ModifProfil"  method="POST">
+            {% csrf_token %}
+            <div class="form-row ">
+
+              <div class="form-group col-md-6">
+                <label>Nom </label>
+                <input type="text" name="titre" class="form-control" id="inputEmail4" placeholder="Nom de la recette">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Mot de passe</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="Mot de passe">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Confirmer Mot de passe</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="Confirmer">
+              </div>
+            </div>
+           
+              <div class="form-group col-md-2">
+                <label for="inputZip">Image</label>
+                <input type="file">
+              </div>
+            
+
+            <button type="submit" class="btn btn-outline-success">Ajouter</button>
+            <button type="reset" class="btn btn-outline-success anuulerModif" onclick="annulerModif()">Annuler</button>
+          </form>
+        </div>
+        <section class="card-group section_recette">
+          <div class=" Recette Ajout_recette activeAjout ">
+            
+              <button type="button" class=" btn btn-outline-success " ><i
+                class="fa fa-plus fa-5x" aria-hidden="true"></i></button>
+              <p>Ajouter</p>
+            
+          </div>
+          {% for r in recettes %}
+          <div class="Recette Recette_hover">
+            <a href={% url 'blog_single' r.id %}><img id="img" src="../static/images/item-3.jpg"/></a>
+            <p>{{r.nom}}</p>
+          </div>
+          {% endfor %}
+         
+          
+
+        </section>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script>
+   
+   
+  </script>
+</body>
+{% endblock %}
+
+</html>

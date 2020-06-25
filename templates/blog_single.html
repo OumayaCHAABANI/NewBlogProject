@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <style>
+    .banner-home {
+      height: auto;
+      padding-top: 187px;
+      ;
+    }
+  </style>
+</head>
+{% block content %}
+
+<body>
+
+  <!-- Header section Start-->
+  <header class="top">
+    <div id="mySidenav" class="sidenav">
+      <a href="/">Accueil</a>
+      <a href="about">À propos</a>
+      <a href="recipes">Recettes</a>
+      {% if user.is_authenticated %}
+      <a href="profil.html">Mon Blog</a>
+      <a href="authentification/deconnexion">Déconnexion</a>
+      {% else %}
+      <a href="authentification/inscription">Inscription</a>
+      <a href="authentification/connexion">Connexion</a>
+      {% endif %}
+    </div>
+
+    <nav id="navbar" class="sticky">
+      <!-- container Start-->
+      <div class="container">
+        <!--Row Start-->
+        <div class="row">
+          <div class="col-lg-4 col-xs-9">
+            <a href="/"><img src="{% static 'images/logoProject.png'%}" alt="logo"></a>
+          </div>
+          <div class="col-lg-8 col-xs-3">
+            <div class="social-icons square">
+              <!-- Page Content -->
+              <div id="page-content-wrapper">
+                <span class="slide-menu" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Row Ended-->
+      </div>
+      <!-- container Ended-->
+    </nav>
+  </header>
+  <!-- Header section Ended-->
+
+ <!-- <section class="banner-home">
+    <div class="container">
+      <h1 data-aos="fade-left" data-aos-duration="500">Bienvenue sur BennaFood</h1>
+    </div>
+  </section>
+  <!-- Banner section End--> 
+  <!-- blog-single Section Start -->
+  <div id="blog-single">
+    <div class="container">
+      <div class="heading">
+        <h2>{{recette.nom}}</h2>
+      </div>
+      <div class="flexBlog" data-aos="fade-up" data-aos-duration="700">
+        <div class="box">
+          <img src="{{recette.image.url}}" alt="" class="img-thumbnail imageBox">
+          <div class="contentBox">
+          <p>{{recette.ingredients}} </br></p> </div>
+        </div>
+      </div>
+      <div class="qutation">
+        <h4>Les étapes de préparation:</h4>
+        <p>{{recette.etapes}}</p>
+      </div>
+      <div class="post">
+        <div class="row">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-primary" disabled>Comments Posted (34)</button>
+          </div>
+        </div>
+        <div class="comment" data-aos="fade-up" data-aos-duration="800">
+          <div class="aComment">
+            <div class="col1">
+              <p><strong>Andrew Suzzane <span> - 12.06.2016</span></strong>Wow...Wow.....i really like the way you write
+                the to the articles about your photography, they are really awesome thanks a lot for sharing</p>
+            </div>
+          </div>
+          <div class="aComment">
+            <div class="col1">
+              <p><strong>Andrew Suzzane <span> - 12.06.2016</span></strong>Wow...Wow.....i really like the way you write
+                the to the articles about your photography, they are really awesome thanks a lot for sharing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comment-box">
+        <div class="row">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-primary" disabled>Write a Comment</button>
+          </div>
+        </div>
+        <form>
+          <div class="row" data-aos="fade-up" data-aos-duration="800">
+            <div class="col-sm-6 col1">
+              <input type="text" class="form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="col-sm-6 col1">
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="col-sm-12 col1">
+              <textarea class="form-control" name="message" placeholder="Type your message" rows="8"
+                required></textarea>
+            </div>
+            <div class="col-sm-12 col1">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Blog_single Section End -->
+  <section class="Subscribe">
+    <div class="container">
+      <div class="row">
+        <div class="heading" data-aos="fade-right" data-aos-delay="300">
+          {% if user.is_authenticated %}
+          <h3>Bienvenue avec nous
+            {{user.username}}</h3>
+          </br>
+          {% else %}
+          <h3> N'hésitez pas à nous rejoindre !</h3>
+          <h6><a href="authentification/inscription">Inscription</a></h6>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer font-small indigo">
+    <div class="gradient"></div>
+    <div class="container">
+      <div class="row text-center d-flex justify-content-center">
+        <div class="col-md-12">
+          <a href="index.html"><img src="{% static 'images/logoProjectFooter.png'%}" alt="footer-logo"></a>
+        </div>
+      </div>
+      <div class="row d-flex text-center justify-content-center mb-md-0 pb-4">
+        <div class="col-md-8 col-12">
+          <address>
+            <p><span>BennaFood est un blog 100% Tunisien qui contient des recettes de partout dans le monde.</span>
+          </address>
+        </div>
+      </div>
+      <div class="col-sm-12 copy-right">
+        <p>© 2020, Tous les droits sont réservés.</p>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <!-- Custom JavaScript -->
+  <script src="js/animate.js"></script>
+  <script src="js/custom.js"></script>
+
+</body>
+{% endblock %}
+
+</html>
