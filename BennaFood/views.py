@@ -13,6 +13,7 @@ import xhtml2pdf.pisa as pisa
 # Create your views here.
 def index(request):
     recette =  Recette.objects.all()
+    
     return render(request,'index.html',{'recette': recette})
 
 def about(request):
