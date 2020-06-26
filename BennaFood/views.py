@@ -14,7 +14,7 @@ import xhtml2pdf.pisa as pisa
 def index(request):
     recette =  Recette.objects.all()
     
-    return render(request,'index.html',{'recette': recette})
+    return render(request,'index.html')
 
 def about(request):
     return render(request,'about.html') 
@@ -29,7 +29,7 @@ def singleB(request,id):
     
 
 def profil(request):
-    return render(request,'profil.html',{"recettex":Recette.objects.all()}) 
+    return render(request,'profil.html',{"recettes":Recette.objects.all().filter(user=request.user)}) 
 
 def ajouter(request):
      if request.method=='POST':
@@ -39,14 +39,23 @@ def ajouter(request):
 def ajoutRecette(request):
     nom=request.POST.get('nom')
     if(nom!=""):
-        r=Recette()
-        r.nom=nom
-        r.user=request.user
+        categories= request.POST.get('categorie')
+        if (categories=="sucrés"):
+            categorie=Categorie.objects.get(id=1)
+        else :
+            if(categories=="salés"):
+                categorie=Categorie.objects.get(id=2)
+            else:
+                categorie=Categorie.objects.get(id=3)
+
+        image= request.POST.get('image')
+        ingredient= request.POST.get('ingredient')
+        prepation= request.POST.get('prepation')
        
-        Recette.objects.create(nom=nom,user=request.user,categorie=Categorie.objects.get(id=1))
+        Recette.objects.create(nom=nom,user=request.user,categorie=categorie,ingredient=ingredient,prepation=prepation)
     
-        
-    messages.error(request,'Champ vide')
+    else :   
+        messages.error(request,'Champ vide')
     return redirect('profil')
     
 def getpdfPage(request):
