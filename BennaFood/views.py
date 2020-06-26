@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from BennaFood.models import Recette,Categorie
+from BennaFood.models import Recette,Categorie,Commentaire
 from django.contrib import messages
 from django.contrib.auth.models import User
 from io import BytesIO
@@ -12,20 +12,23 @@ import xhtml2pdf.pisa as pisa
 
 # Create your views here.
 def index(request):
-    recette =  Recette.objects.all()
+    recette = Recette.objects.all().filter(user=request.user)
     
-    return render(request,'index.html')
+    return render(request,'index.html',{"recette":recette})
 
 def about(request):
     return render(request,'about.html') 
 
 def recipes(request):
     recette =  Recette.objects.all()
-    return render(request,'recipes.html',{'recette':recette}) 
+    return render(request,'recipes.html',{'recette':Recette.objects.all().filter(user=request.user)}) 
 
 def singleB(request,id):
     recette=Recette.objects.get(id=id)
-    return render(request,'blog_single.html',{"recette":recette})  
+    
+            
+    return render(request,'blog_single.html',{"recette":recette,
+    "commentaires":commentaires})  
     
 
 def profil(request):

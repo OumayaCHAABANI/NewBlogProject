@@ -25,7 +25,6 @@
       <a href="authentification/inscription">Inscription</a>
       <a href="authentification/connexion">Connexion</a>
       {% endif %}
-      <a href="blog_single">Une Recette</a>
     </div>
     </div>
     <nav id="navbar" class="sticky">
@@ -104,10 +103,6 @@
 
     </div>
   </section>
-  {% for r in recette|slice:":4" %}
-  {{r.nom}}
-  {% endfor %}
- 
   <section class="items">
     <div class="container">
       <div class="heading" data-aos="fade-up" data-aos-delay="300">

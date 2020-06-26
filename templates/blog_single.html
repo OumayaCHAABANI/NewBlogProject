@@ -24,18 +24,19 @@
   <!-- Header section Start-->
   <header class="top">
     <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="/">Accueil</a>
       <a href="about">À propos</a>
       <a href="recipes">Recettes</a>
       {% if user.is_authenticated %}
-      <a href="profil.html">Mon Blog</a>
+      <a href="profil">Mon Blog</a>
       <a href="authentification/deconnexion">Déconnexion</a>
       {% else %}
       <a href="authentification/inscription">Inscription</a>
       <a href="authentification/connexion">Connexion</a>
       {% endif %}
     </div>
-
+    </div>
     <nav id="navbar" class="sticky">
       <!-- container Start-->
       <div class="container">
@@ -60,12 +61,12 @@
   </header>
   <!-- Header section Ended-->
 
- <!-- <section class="banner-home">
+  <!-- <section class="banner-home">
     <div class="container">
       <h1 data-aos="fade-left" data-aos-duration="500">Bienvenue sur BennaFood</h1>
     </div>
   </section>
-  <!-- Banner section End--> 
+  <!-- Banner section End-->
   <!-- blog-single Section Start -->
   <div id="blog-single">
     <div class="container">
@@ -76,38 +77,35 @@
         <div class="box">
           <img src="{{recette.image.url}}" alt="" class="img-thumbnail imageBox">
           <div class="contentBox">
-          <p>{{recette.ingredients}} </br></p> </div>
+            <p>
+              <pre>{{recette.ingredients}} </pre></br></p>
+          </div>
         </div>
       </div>
       <div class="qutation">
         <h4>Les étapes de préparation:</h4>
-        <p>{{recette.etapes}}</p>
+        <pre>{{recette.etapes}}</pre>
       </div>
       <div class="post">
         <div class="row">
           <div class="col-sm-12">
-            <button type="button" class="btn btn-primary" disabled>Comments Posted (34)</button>
+            <button type="button" class="btn btn-primary" disabled>Comments Posted ({{commentaires.count}})</button>
           </div>
         </div>
+        {% for c in commentaires %}
         <div class="comment" data-aos="fade-up" data-aos-duration="800">
           <div class="aComment">
             <div class="col1">
-              <p><strong>Andrew Suzzane <span> - 12.06.2016</span></strong>Wow...Wow.....i really like the way you write
-                the to the articles about your photography, they are really awesome thanks a lot for sharing</p>
-            </div>
-          </div>
-          <div class="aComment">
-            <div class="col1">
-              <p><strong>Andrew Suzzane <span> - 12.06.2016</span></strong>Wow...Wow.....i really like the way you write
-                the to the articles about your photography, they are really awesome thanks a lot for sharing</p>
+              <p><strong>{{c.user}} <span> -{{c.date}}</span></strong>{{c.contenu}}</p>
             </div>
           </div>
         </div>
       </div>
+      {% endfor %}
       <div class="comment-box">
         <div class="row">
           <div class="col-sm-12">
-            <button type="button" class="btn btn-primary" disabled>Write a Comment</button>
+            <button type="button" class="btn btn-primary" disabled>Écrire un commentaire </button>
           </div>
         </div>
         <form>
