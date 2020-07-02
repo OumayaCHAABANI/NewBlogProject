@@ -188,12 +188,16 @@ flex-direction: row;
 Justify-content: space-around;
 }
 .recepiesFlex .imageBox{
-display: flex;
-flex-direction: column;
-float: left;
-width: 350px;
-height: 200px;
-margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 350px;
+  height: 200px;
+  margin-left: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 100px ;
+  margin-bottom: 50px;
  }
 .recepiesFlex .textBox{
 width: 350px;
@@ -218,17 +222,37 @@ flex-direction: column;
 padding-top: 20px; 
 }
 .comment{
-display: flex;
-flex-direction: row;
-justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  Justify-content: space-around;
+  
 }
-.comment .acomment {
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-width: 50px;
-height: 10px;
-padding-left: 2000px;
-padding-right: 2000px;
-margin-left: 200px;
+.comment .aComment {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 3000px;
+  height: 200px;
+  margin-bottom: 20px;}
+.qutation{
+  width: 3000px;
+  margin-right: 50px ;
+  margin-left: 10px ; 
+}
+.qutation p {
+  margin-left: 1000px;
+  padding-left: 1000px;
+  
+}
+.connexionCommentaire h2>a{
+  margin-left: 300px;
+}
+.rating {
+  color: #ccc;
+}
+.rating .voted {
+  color: #FFC107;
+}
+.rating i {
+  margin-right: 2px;
 }

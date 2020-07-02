@@ -6,13 +6,16 @@ from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template
 import xhtml2pdf.pisa as pisa
+from .forms import CommentaireForm
 
 
 
 
 # Create your views here.
 def index(request):
-    recette = Recette.objects.all().filter(user=request.user)
+    recette = Recette.objects.all().filter()
+    
+
     
     return render(request,'index.html',{"recette":recette})
 
@@ -20,15 +23,61 @@ def about(request):
     return render(request,'about.html') 
 
 def recipes(request):
-    recette =  Recette.objects.all()
-    return render(request,'recipes.html',{'recette':Recette.objects.all().filter(user=request.user)}) 
+    recette =  Recette.objects.all().filter()
+    query = request.GET.get("q")
+    if query :
+        recette = recette.filter(nom__icontains= query)
+
+
+    return render(request,'recipes.html',{'recette':recette}) 
+
+
+def sweetrecipes(request):
+    recette =  Recette.objects.filter (categorie = 1)
+    query = request.GET.get("q")
+    if query :
+        recette = recette.filter(nom__icontains= query)
+    return render(request,'sweetrecipes.html',{'recette':recette}) 
+
+def saltrecipes(request):
+    recette =  Recette.objects.filter (categorie = 2)
+    query = request.GET.get("q")
+    if query :
+        recette = recette.filter(nom__icontains= query)
+
+    return render(request,'saltrecipes.html',{'recette':recette}) 
+
+
+def drinkrecipes(request):
+    recette =  Recette.objects.filter (categorie = 3)
+    query = request.GET.get("q")
+    if query :
+        recette = recette.filter(nom__icontains= query)
+
+
+    return render(request,'drinkrecipes.html',{'recette':recette}) 
+
+
 
 def singleB(request,id):
     recette=Recette.objects.get(id=id)
-    
+    commentaires = recette.commentaires.filter(recette = recette).order_by('date').reverse()
+    categorie = recette.categorie.nom
+    nv_commentaire = None
+    user = request.user
+    if request.method == 'POST':
+        commentaire_form = CommentaireForm(data = request.POST)
+        if commentaire_form.is_valid():
+            nv_commentaire = commentaire_form.save(commit = False)
+            nv_commentaire.recette = recette
+            nv_commentaire.user = user
+            nv_commentaire.save()
+    else : 
+        commentaire_form=CommentaireForm()    
+     
             
     return render(request,'blog_single.html',{"recette":recette,
-    "commentaires":commentaires})  
+    "commentaires":commentaires,"commentaire_form":commentaire_form,"nv_commentaire":nv_commentaire,"categorie":categorie})  
     
 
 def profil(request):

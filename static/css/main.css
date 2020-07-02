@@ -694,9 +694,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
 #blog-single h1 {font-size: 44px;font-weight: 300;padding-bottom: 50px;position: relative;}
 #blog_single .qutation {
     width: 100%;
-    text-align: center;
-    padding: 50px 170px 50px;
-    margin: 40px 0;
     border: 1px solid #c8c8c8;
 }
 #blog-single .heading h2 {
@@ -776,8 +773,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
 #blog-single .qutation {
     width: 100%;
     border: 1px solid #b5b5b5;
-    text-align: center;
-    padding: 73px 160px;
     margin-bottom: 50px;
 }
 
@@ -1000,7 +995,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
 
 #blog-single .post strong span {color: #959595; font-size: 14px; font-weight: 500;}
 #blog-single .post .col1 p {color: #959595;font-weight: 500;font-size: 17px;line-height: 35px;}
-#blog-single .post .col1 {border: 1px solid #d0d0d0;padding: 50px 40px;}
+#blog-single .post .col1 {border: 1px solid #d0d0d0;}
 #blog-single .comment-box form .row {margin-left: -15px;margin-right: -15px;}
 #blog-single  .comment-box form .col2 {padding: 0;}
 #blog-single  .comment-box {padding-top: 40px;}
@@ -1088,7 +1083,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog .inner-content {padding-right: 0;}
     #blog h6 {font-size: 14px;}
     #blog .bt ul {padding-bottom: 50px;}
-    #blog .bt {padding-top: 50px;}#blog_single .qutation {padding: 40px 87px 40px;}
+    #blog .bt {padding-top: 50px;}#blog_single 
     #blog_single .heading h2 {padding-right: 320px;font-size: 28px;}
     #blog_single .more_blog h3 {padding-bottom: 30px;font-size: 34px;}
     #blog_single .more_blog img {height: 250px;}
@@ -1103,7 +1098,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog-single h1 {font-size: 38px;font-weight: 300;padding-bottom: 25px;}
     #blog-single .box p {font-size: 14px;line-height: 25px;word-spacing: -2px;margin-top: -5px;padding-bottom: 30px;}
     #blog-single h4 {font-size: 18px;line-height: 30px;}
-    #blog-single .qutation {padding: 60px 210px;}
     #blog-single .image {width: 400px;height: 470px;}
     .social-buttons {margin-top: 40px;margin-bottom: 50px;}
     #blog-single .more-bog .btn-primary {font-size: 34px;margin-bottom: 40px;}
@@ -1111,7 +1105,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog-single .comment-box .btn-primaryc {font-size: 34px;margin-bottom: 40px;}
     #blog-single .comment-box .btn-primary {font-size: 34px;margin-bottom: 40px;}
     #blog-single .post .col1 p {font-size: 14px;line-height: 27px;}
-    #blog-single .post .col1 {padding: 40px 20px;}
+   
     #blog-single .post strong {font-size: 20px;}
     #blog-single .post {padding-bottom: 20px}
 }
@@ -1182,7 +1176,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog-single .heading h2 {font-size: 24px;line-height: 30px;padding-right: 200px;padding-bottom: 25px;}
     #blog-single hr {padding-bottom: 20px;}
     #blog-single .image {width: 100%;height: 270px;}
-    #blog-single .qutation {padding: 40px 80px;}
     .mbm_social a {width: 100px;}
     .mbm_social small {font-size: 12px;margin: 0 0 0 12px;}
     .mbm_social {margin: 30px 10px;}
@@ -1193,7 +1186,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog-single .more-bog .btn-primary {font-size: 28px;padding: 3px 14px;margin-bottom: 40px;}
     #blog-single .post .btn-primary {font-size: 28px;padding: 3px 14px;margin-bottom: 40px;}
     #blog-single .comment-box .btn-primary {font-size: 28px;padding: 3px 14px;margin-bottom: 40px;}
-    #blog-single .post .col1 p {font-size: 12px;letter-spacing: 0.5px;line-height: 24px;}
+    
     #blog-single .comment-box form input {height: 50px;}
     #blog-single .comment-box form textarea {height: 200px;}
     #blog-single .comment-box form .btn-primary {padding: 12px 50px;font-size: 14px;}
@@ -1236,14 +1229,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog {padding-bottom: 20px;}
     #blog-single h1 {font-size: 25px;padding-bottom: 5px;}
     #blog-single .heading h2 {font-size: 18px;line-height: 25px;padding-right: 0;padding-bottom: 25px;}
-    #blog-single .qutation {padding: 30px 30px;}
     #blog-single h4 {font-size: 16px;}
     .mbm_social {float: none;margin-bottom: 0;}
     .social-buttons h3 {text-align: center;}
     #blog-single .more-bog .btn-primary,#blog-single .post .btn-primary,#blog-single .comment-box .btn-primary {font-size: 24px;padding: 3px 14px;margin-bottom: 20px;}
     #blog-single .comment-box form textarea {height: 150px;}
     #blog-single .more-bog h6 {padding-bottom: 25px;}
-    #blog-single .post .col1 {margin-bottom: 10px;}
     #blog-single .comment-box form input {height: 45px;margin-bottom: 15px;}
     #blog-single .comment-box form .btn-primary {padding: 10px 30px;font-size: 12px;letter-spacing: 0.5px;}
     .mbm_social i {font-size: 12px;}
@@ -1284,7 +1275,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog-single .image {height: 200px;}
     #blog-single .box p {font-size: 12px;line-height: 19px;letter-spacing: 0.5px;}
     #blog-single h4 {font-size: 14px;line-height: 25px;}
-    #blog-single .qutation {padding: 20px 20px;}
+
     #blog-single .qutation {margin-bottom: 30px;}
     .mbm_social a {width: 76px;height: 25px;}
     .mbm_social i {font-size: 11px;}
@@ -1297,7 +1288,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', e
     #blog-single .post strong {font-size: 16px;}
     #blog-single .post strong span {font-size: 12px;}
     #blog-single .post .col1 p {letter-spacing: 0;line-height: 20px;}
-    #blog-single .post .col1 {margin-bottom: 5px;padding: 25px 20px;}
     #blog-single .post {padding-bottom: 0;}
     .Subscribe .heading h3 {font-size: 21px;letter-spacing: 0;}
 }

@@ -26,14 +26,17 @@
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="/">Accueil</a>
-      <a href="about">À propos</a>
-      <a href="recipes">Recettes</a>
+      <a href="/about">À propos</a>
+      <a href="/recipes">Recettes</a>
       {% if user.is_authenticated %}
-      <a href="profil">Mon Blog</a>
-      <a href="authentification/deconnexion">Déconnexion</a>
+      <a href="/profil">Mon Blog</a>
+      {% if  user.is_superuser %}
+      <a href="admin">Configuration</a>{% endif %}
+      
+      <a href="/authentification/deconnexion">Déconnexion</a>
       {% else %}
-      <a href="authentification/inscription">Inscription</a>
-      <a href="authentification/connexion">Connexion</a>
+      <a href="/authentification/inscription">Inscription</a>
+      <a href="/authentification/connexion">Connexion</a>
       {% endif %}
     </div>
     </div>
@@ -71,7 +74,21 @@
   <div id="blog-single">
     <div class="container">
       <div class="heading">
+        <h6>Catégorie :
+          {% if categorie ==  "Sucrée" %}
+          <i class="fas fa-birthday-cake"></i> 
+          {% endif %}    
+          {% if categorie ==  "Salée" %}
+          <i class="fas fa-hamburger"></i>
+          {% endif %}    
+          
+          {% if categorie ==  "Boisson" %}
+          <i class="fas fa-mug-hot"></i>
+          {% endif %}    
+           {{categorie}}
+          </h6>
         <h2>{{recette.nom}}</h2>
+        
       </div>
       <div class="flexBlog" data-aos="fade-up" data-aos-duration="700">
         <div class="box">
@@ -84,7 +101,7 @@
       </div>
       <div class="qutation">
         <h4>Les étapes de préparation:</h4>
-        <pre>{{recette.etapes}}</pre>
+        <p><pre>{{recette.etapes}}</pre> </p>
       </div>
       <div class="post">
         <div class="row">
@@ -94,38 +111,57 @@
         </div>
         {% for c in commentaires %}
         <div class="comment" data-aos="fade-up" data-aos-duration="800">
-          <div class="aComment">
-            <div class="col1">
-              <p><strong>{{c.user}} <span> -{{c.date}}</span></strong>{{c.contenu}}</p>
+            <div class="col1 aComment">
+              <p><strong>{{c.user}} <span> -{{c.date}}</span></strong>
+                {% if c.vote != 0 %}
+								<div class="rating" data-rating="{{ c.vote }}">
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+								</div>
+								{% endif %}
+                {{c.contenu}}</p> 
             </div>
-          </div>
+         
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+
+      {% if user.is_authenticated %}
+      {% if nv_commentaire %}
+      <div class="alert alert-success" role="alert">
+        <h4>Votre commentaire est saisie! </h4>
+      </div>
+      {% else %}
       <div class="comment-box">
         <div class="row">
           <div class="col-sm-12">
             <button type="button" class="btn btn-primary" disabled>Écrire un commentaire </button>
           </div>
         </div>
-        <form>
+        <form method="POST" action="">
+          {% csrf_token %}
+
           <div class="row" data-aos="fade-up" data-aos-duration="800">
-            <div class="col-sm-6 col1">
-              <input type="text" class="form-control" placeholder="Enter your name" required>
-            </div>
-            <div class="col-sm-6 col1">
-              <input type="email" class="form-control" placeholder="Enter your email" required>
-            </div>
             <div class="col-sm-12 col1">
-              <textarea class="form-control" name="message" placeholder="Type your message" rows="8"
-                required></textarea>
-            </div>
-            <div class="col-sm-12 col1">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              {{ commentaire_form}}
+              <br>
+              <button type="submit" class="btn btn-primary">Commenter</button>
             </div>
           </div>
         </form>
       </div>
+      {% endif %}
+      {% else %}
+      <div class="connexionCommentaire"> 
+        <h3> Vous devez vous connecter avant d'écrire un commentaire:</h3>
+      <h2><a href="/authentification/connexion">Connexion</a></h2>
+     
+      </div>
+      
+      {% endif %}
+
     </div>
   </div>
   <!-- Blog_single Section End -->
@@ -139,7 +175,7 @@
           </br>
           {% else %}
           <h3> N'hésitez pas à nous rejoindre !</h3>
-          <h6><a href="authentification/inscription">Inscription</a></h6>
+          <h6><a href="/authentification/inscription">Inscription</a></h6>
           {% endif %}
         </div>
       </div>
@@ -181,6 +217,15 @@
   <!-- Custom JavaScript -->
   <script src="js/animate.js"></script>
   <script src="js/custom.js"></script>
+  <script>
+    $('.rating').each(function () {
+      thisrating = $(this);
+      for (i = 0; i <= parseInt(thisrating.data('rating')); i++) {
+        $(thisrating).find('i:nth-child(' + i + ')').addClass('voted');
+      }
+    })
+  </script>
+  
 
 </body>
 {% endblock %}
