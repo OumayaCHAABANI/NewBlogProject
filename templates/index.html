@@ -106,7 +106,7 @@
       <div class="heading" data-aos="fade-up" data-aos-delay="300">
         <h2>Découvrez plus de <span><a href="recipes">Nos Recettes</a></span></h2>
       </div>
-      {% for r in recette|slice:":4" %}
+      {% for r in recette|slice:":3" %}
       <div class="title text-center text-lg-left">
         <div class="imageBox" data-aos="fade-left" data-aos-delay="300">
           <a href={% url 'blog_single' r.id %} class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">

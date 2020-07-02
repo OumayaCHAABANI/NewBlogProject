@@ -186,7 +186,9 @@ padding-top: 100px;
 display: flex;
 flex-direction: row;
 Justify-content: space-around;
+position: center;
 }
+
 .recepiesFlex .imageBox{
   display: flex;
   flex-direction: column;
@@ -194,8 +196,8 @@ Justify-content: space-around;
   width: 350px;
   height: 200px;
   margin-left: 100px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 200px;
+  padding-right: 200px;
   padding-bottom: 100px ;
   margin-bottom: 50px;
  }
