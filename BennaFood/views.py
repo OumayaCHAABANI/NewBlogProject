@@ -14,7 +14,7 @@ import xhtml2pdf.pisa as pisa
 def index(request):
     recette =  Recette.objects.all()
     
-    return render(request,'index.html')
+    return render(request,'index.html',{'recette':recette})
 
 def about(request):
     return render(request,'about.html') 
@@ -30,6 +30,27 @@ def singleB(request,id):
 
 def profil(request):
     return render(request,'profil.html',{"recettes":Recette.objects.all().filter(user=request.user)}) 
+
+def ModifierProfil(request,id):
+    nom= request.POST.get('nom')
+    mdp= request.POST.get('mdp')
+    confirmmdp= request.POST.get('confirmmdp')
+    if(nom == ''):
+        messages.error(request,'Nom vide')
+    if(mdp== '' or confirmmdp ==''):
+            messages.error(request,'Mot de passe vide')
+        
+    if(mdp != confirmmdp):
+        messages.error(request,'Vérifiez le mot de passe')
+    
+    User.objects.filter(id=id).update(username=nom,password=mdp)        
+
+
+    return redirect('profil')
+
+
+       
+
 
 def ajouter(request):
      if request.method=='POST':
@@ -49,19 +70,19 @@ def ajoutRecette(request):
                 categorie=Categorie.objects.get(id=3)
 
         image= request.POST.get('image')
-        ingredient= request.POST.get('ingredient')
-        prepation= request.POST.get('prepation')
+        ingredients= request.POST.get('ingredient')
+        etapes= request.POST.get('prepation')
        
-        Recette.objects.create(nom=nom,user=request.user,categorie=categorie,ingredient=ingredient,prepation=prepation)
-    
+        Recette.objects.create(nom=nom,user=request.user,categorie=categorie,ingredients=ingredients,etapes=etapes,image=image)
+        
     else :   
         messages.error(request,'Champ vide')
     return redirect('profil')
     
-def getpdfPage(request):
-    recettes=Recette.objects.all()
-    data={"recettes":recettes}
-    template=get_template("profil.html")
+def getpdfPage(request,id):
+    recette=Recette.objects.get(id=id)
+    data={"recette":recette}
+    template=get_template("RecettePdf.html")
     data_p=template.render(data)
     response=BytesIO()
     pdfPage=pisa.pisaDocument(BytesIO(data_p.encode("UTF-8")),response)
@@ -89,4 +110,27 @@ def myview(request):
                 'mylist': results,
             }
         )
-               
+
+def modifierRecette(request,id) :
+    nom=request.POST.get('nom')
+    image= request.POST.get('image')
+    ingredients= request.POST.get('ingredient')
+    etapes= request.POST.get('prepation')
+       
+    if(nom!=""  ):
+        categories= request.POST.get('categorie')
+        if (categories=="sucrés"):
+            categorie=Categorie.objects.get(id=1)
+        else :
+            if(categories=="salés"):
+                categorie=Categorie.objects.get(id=2)
+            else:
+                categorie=Categorie.objects.get(id=3)
+
+        
+    Recette.objects.filter(id=id).update(nom=nom,user=request.user,categorie=categorie,ingredients=ingredients,etapes=etapes,image=image)        
+    return redirect('profil')     
+
+def supprimerRecette(request,id):
+    Recette.objects.filter(id=id).delete()
+    return redirect('profil')

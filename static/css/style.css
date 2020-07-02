@@ -82,6 +82,9 @@ border: #61ac24 solid 1px;
 
 /*****Responsive profil*****/
 @media screen and (max-width: 992px) {
+  .row{
+    padding-top: 25px;
+  }
 .section_recette .Recette {
   width: 32%;;
   margin-top: 20px;
@@ -94,7 +97,8 @@ border: #61ac24 solid 1px;
 }
 
 @media screen and (max-width: 600px) {
-.section_recette .Recette {
+
+  .section_recette .Recette {
   width: 49%;;
   margin-top: 20px;
   text-align: center;

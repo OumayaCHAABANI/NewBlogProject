@@ -29,10 +29,10 @@
       <div class="container">
         <!--Row Start-->
         <div class="row">
-          <div class="col-lg-4 col-xs-9">
+          <div class="col-lg-4 col-xs-9 col-md-8">
             <a href="index.html"><img src="{% static 'images/logoproject.png'%}" alt="logo"></a>
           </div>
-          <div class="col-lg-8 col-xs-3">
+          <div class="col-lg-8 col-xs-3 col-md-4">
             <div class="social-icons square">
               <!-- Page Content -->
               <div id="page-content-wrapper">
@@ -51,16 +51,16 @@
   <!-- Page Content -->
   <div>
 
-    <div class="row">
+    <div class="row" >
       <!-- Sidebar Widgets Column -->
       <div class="col-lg-2 liste col-sm-12 ">
         <div class="">
           <div>
             <img class="user" src="../static/images/user.jpg">
           </div>
-          <div>
+          <div style="text-align: center;">
             <h1 class="center">{{user.username}}</h1>
-            <p class="center">Données  </p>
+           
             
            
             <button  type="button" class="btn btn-success ModifProfil">Modifier</button>
@@ -84,25 +84,22 @@
               </div>
               <div class="form-group col-md-6">
                 <label>Ingredients</label>
-                <input type="text" name="ingredient" class="form-control" id="inputPassword4" placeholder="Ingredients">
+                <textarea type="text" name="ingredient" class="form-control" id="inputPassword4" placeholder="Ingredients"></textarea>
               </div>
             </div>
             <div class="form-group">
               <label for="inputAddress">Preparation</label>
-              <input type="text" name="prepation" class="form-control" placeholder="Preparation">
+              <TEXTAREA  type="text" name="prepation" class="form-control" placeholder="Preparation"></TEXTAREA>
             </div>
-            <div class="form-group">
-              <label for="inputAddress2">Image</label>
-              <input type="text" class="form-control" placeholder="Image">
-            </div>
+           
             <div class="form-row">
 
               <div class="form-group col-md-4">
                 <label for="inputState">Type</label>
                 <select id="inputState" class="form-control" name="categorie">
-                  <option selected>sucrés</option>
-                  <option>Salés</option>
-                  <option>Boissons</option>
+                  <option selected value="sucrés">sucrés</option>
+                  <option value="salés">Salés </option>
+                  <option value="boissons">Boissons</option>
                 </select>
               </div>
               <div class="form-group col-md-2">
@@ -119,31 +116,27 @@
           <div class="alert alert-danger" role="alert" > {{message}}  </div>
           {% endfor %}
           {% endif %}
-          <form id="ModifProfil"  method="POST">
+          <form id="ModifProfil"  method="POST" action={% url 'ModifierProfil' user.id%}>
             {% csrf_token %}
             <div class="form-row ">
-
-              <div class="form-group col-md-6">
+              <div class=" col-md-12">
+              <div class="form-group col-md-4">
                 <label>Nom </label>
-                <input type="text" name="titre" class="form-control" id="inputEmail4" placeholder="Nom de la recette">
-              </div>
-              <div class="form-group col-md-6">
-                <label>Mot de passe</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Mot de passe">
-              </div>
-              <div class="form-group col-md-6">
-                <label>Confirmer Mot de passe</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Confirmer">
+                <input type="text" name="nom" class="form-control" id="inputEmail4" value="{{user.username}}">
               </div>
             </div>
-           
-              <div class="form-group col-md-2">
-                <label for="inputZip">Image</label>
-                <input type="file">
+            <div class="col-md-12"> 
+              <div class="form-group col-md-4">
+                <label>Mot de passe</label>
+                <input type="text" name="mdp" class="form-control" id="inputPassword4" placeholder="Mot de passe">
               </div>
-            
-
-            <button type="submit" class="btn btn-outline-success">Ajouter</button>
+              <div class="form-group col-md-4">
+                <label>Confirmer Mot de passe</label>
+                <input type="text" name="confirmmdp" class="form-control" id="inputPassword4" placeholder="Confirmer">
+              </div>
+            </div>
+          </div>
+            <button type="submit" class="btn btn-outline-success">Modifier</button>
             <button type="reset" class="btn btn-outline-success anuulerModif" onclick="annulerModif()">Annuler</button>
           </form>
         </div>
@@ -157,7 +150,7 @@
           </div>
           {% for r in recettes %}
           <div class="Recette Recette_hover">
-            <a href={% url 'blog_single' r.id %}><img id="img" src="../static/images/item-3.jpg"/></a>
+            <a href={% url 'blog_single' r.id %}><img id="img" src="{{r.image.url}}"/></a>
             <p>{{r.nom}}</p>
           </div>
           {% endfor %}

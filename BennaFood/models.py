@@ -26,8 +26,5 @@ class Recette (models.Model):
     commentaire = models.ForeignKey(Commentaire,on_delete=models.CASCADE,default=None,null = True)
     categorie = models.ForeignKey(Categorie,on_delete=models.CASCADE,default=False)
     
-    
-    def __str__(self):
-        return self.nom
-   
+  
     

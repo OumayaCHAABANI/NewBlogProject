@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <style>
+    .banner-home {
+      height: auto;
+      padding-top: 187px;
+      ;
+    }
+  </style>
+</head>
+{% block content %}
+
+<body>
+  <div id="blog-single">
+    <div class="container">
+      <div class="heading">
+        <h2>{{recette.nom}}</h2>
+        
+      </div>
+      <div class="flexBlog" data-aos="fade-up" data-aos-duration="700">
+        <div class="box">
+          <img src="{{recette.image.url}}" alt="" class="img-thumbnail imageBox">
+          <div class="contentBox">
+          <p>{{recette.ingredients}} </br></p> </div>
+        </div>
+      </div>
+      <div class="qutation">
+        <h4>Les étapes de préparation:</h4>
+        <p>{{recette.etapes}}</p>
+      </div>
+      
+     
+    </div>
+  </div>
+ 
+  
+ 
+  
+</body>
+{% endblock %}
+
+</html>
