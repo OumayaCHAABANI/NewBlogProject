@@ -195,12 +195,8 @@ position: center;
   float: left;
   width: 350px;
   height: 200px;
-  margin-left: 100px;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-bottom: 100px ;
-  margin-bottom: 50px;
- }
+ margin-left: 20px;
+ margin-top:20px;}
 .recepiesFlex .textBox{
 width: 350px;
 height: 230px;
