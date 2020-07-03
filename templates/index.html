@@ -20,12 +20,14 @@
       <a href="recipes">Recettes</a>
       {% if user.is_authenticated %}
       <a href="profil">Mon Blog</a>
+      {% if  user.is_superuser %}
+      <a href="admin">Configuration</a>{% endif %}
+      
       <a href="authentification/deconnexion">Déconnexion</a>
       {% else %}
       <a href="authentification/inscription">Inscription</a>
       <a href="authentification/connexion">Connexion</a>
       {% endif %}
-      <a href="blog_single">Une Recette</a>
     </div>
     </div>
     <nav id="navbar" class="sticky">
@@ -73,7 +75,7 @@
         <div class="row" data-aos="fade-left" data-aos-delay="500">
           <div class="col-sm-12">
             <h2>À propos <span>BennaFood</span></h2>
-            <p>BennaFood est l'un des meilleurs Blogs clinaires en Tunisie,ainsi que dans le monde arabe.</p>
+            <p>BennaFood est l'un des meilleurs Blogs culinaires en Tunisie,ainsi que dans le monde arabe.</p>
             <p>Il offre à ses utilisateurs une infinité de recettes dans plusieurs thèmes : sucrées,salées,Boissons
               chaudes et froides...</p>
           </div>
@@ -81,39 +83,30 @@
         <div class="row">
           <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="700">
             <ul>
-              <li><i class="fa fa-bookmark-o" aria-hidden="true"></i><a href="about.html">Sucrées</a> </li>
+              <li> <i class="fas fa-birthday-cake" aria-hidden="true"></i> <a href="sweetrecipes">Sucrées</a> </li>
             </ul>
           </div>
           <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="800">
             <ul>
-              <li><i class="fa fa-bookmark-o" aria-hidden="true"></i><a href="about.html">salées</a> </li>
+              <li><i class="fas fa-hamburger"></i> <a href="saltrecipes">Salées</a> </li>
             </ul>
           </div>
           <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="900">
             <ul>
-              <li><i class="fa fa-bookmark-o" aria-hidden="true"></i><a href="about.html">Boissons</a> </li>
+              <li>  <i class="fas fa-mug-hot"></i><a href="drinkrecipes">Boissons</a> </li>
             </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12" data-aos="fade-up" data-aos-delay="700">
-            <a class="btn btn-primary" href="about" role="button">+ many more...</a>
           </div>
         </div>
       </div>
 
     </div>
   </section>
-  {% for r in recette|slice:":4" %}
-  {{r.nom}}
-  {% endfor %}
- 
   <section class="items">
     <div class="container">
       <div class="heading" data-aos="fade-up" data-aos-delay="300">
         <h2>Découvrez plus de <span><a href="recipes">Nos Recettes</a></span></h2>
       </div>
-      {% for r in recette|slice:":4" %}
+      {% for r in recette|slice:":3" %}
       <div class="title text-center text-lg-left">
         <div class="imageBox" data-aos="fade-left" data-aos-delay="300">
           <a href={% url 'blog_single' r.id %} class="d-block mb-4 h-100" data-toggle="lightbox" data-gallery="example-gallery">
