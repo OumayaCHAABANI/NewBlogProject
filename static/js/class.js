@@ -1,8 +1,6 @@
 class Present {
-   form = document.querySelector('#ModifProfil'); 
       constructor(form) {
-        console.log('cons');
-     
+       this.form=form;
       // Bind event listeners.
       this._btnFunction = this._btnFunction.bind(this);
       

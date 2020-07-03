@@ -82,8 +82,72 @@
            {{categorie}}
           </h6>
         <h2>{{recette.nom}}</h2>
+        <i class="fa fa-pencil-square-o fa-2x ModifProfil" aria-hidden="true"></i>
+        <i class="fa fa-trash fa-2x " aria-hidden="true" data-toggle="modal" data-target="#exampleModal"></i>
+        <a href={% url 'getpdfPage' recette.id%}>
+            <i class="fa fa-download fa-2x" aria-hidden="true" ></i>
+        </a>
+        <form id="modifierRecette" style="display: none;" method="POST" action={% url 'modifierRecette' recette.id%}>
+          {% csrf_token %}
+          <div class="form-row ">
+
+            <div class="form-group col-md-6">
+              <label>Nom de la recette</label>
+              <input type="text" value="{{recette.nom}}" name="nom" class="form-control" id="inputEmail4" placeholder="Nom de la recette">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Ingredients</label>
+              <textarea type="text"  name="ingredient" class="form-control" id="inputPassword4" placeholder="Ingredients">{{recette.ingredients}}</textarea>
+           
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Preparation</label>
+            <TEXTAREA  type="text" name="prepation" class="form-control" placeholder="Preparation">{{recette.etapes}}</TEXTAREA>
+            
+          </div>
+          <div class="form-row">
+
+            <div class="form-group col-md-4">
+              <label for="inputState">Type</label>
+              <select id="inputState" class="form-control" name="categorie">
+                <option selected value="sucrés">sucrés</option>
+                <option value="salés">Salés </option>
+                <option value="boissons">Boissons</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Image</label>
+              <input type="file" value="{{recette.image.url}}" name="image">
+              {{recette.image.url}}
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-outline-success FormAjoutRecette">Modifier</button>
+          <button type="reset" class="btn btn-outline-success" onclick="annuler()">Annuler</button>
+        </form> 
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Supprimer la recette</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Voulez vous Supprimer  {{recette.nom}}? 
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <form action= {% url 'supprimerRecette' recette.id%}>
+                  <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
+              </div>
+            </div>
         
-      </div>
+          </div>
+        </div>
       <div class="flexBlog" data-aos="fade-up" data-aos-duration="700">
         <div class="box">
           <img src="{{recette.image.url}}" alt="" class="img-thumbnail imageBox">

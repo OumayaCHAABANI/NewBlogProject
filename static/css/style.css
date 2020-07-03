@@ -42,9 +42,9 @@ body {
 }
 .section_recette  :hover{
 color: #61ac24;
-zoom: 70%;
-box-shadow: 1px 1px 3px 1px #61ac246b;
-font-size: 30px;
+
+box-shadow: 2px 2px 4px 2px #61ac246b;
+
 }
 .section_recette .Recette {
   width: 24%;;
